@@ -2,7 +2,16 @@
 
 This repository includes files to create a VM with which a user can try system analytics tools that are written in System Performance (Brendan Gregg 20).
 
-## Tools included in the VM
+## Overview of the VM
+
+### System
+
+* Ubuntu 18.04
+* 2 CPUs
+* 4GB Memory
+* No GUI
+
+### Tools included in the VM
 
 * perf
 * BCC tools
@@ -11,9 +20,9 @@ This repository includes files to create a VM with which a user can try system a
 
 ### Prerequisites
 
-* VirtualBox (>=6.1)
-* Vagrant (>=2.2)
-* Ansible (>=2.10)
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (>=6.1)
+* [Vagrant](https://www.vagrantup.com/downloads) (>=2.2)
+* [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) (>=2.10)
 
 ### Create a VM
 

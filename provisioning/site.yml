@@ -1,0 +1,15 @@
+---
+- hosts: vagrants
+  become: true
+  user: vagrant
+  tasks:
+    - name: Install perf
+      apt:
+        pkg: 
+          - linux-tools-generic
+          - linux-tools-{{ ansible_kernel }}
+        state: present
+        update_cache: yes
+    - import_tasks: ./tasks/install_bcc.yml
+      tags:
+        - install_bcc

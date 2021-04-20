@@ -1,0 +1,43 @@
+---
+- name: Add an apt key
+  ansible.builtin.apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 4052245BD4284CDD
+- name: Add iovisor repository in sources list
+  ansible.builtin.apt_repository:
+    repo: deb https://repo.iovisor.org/apt/{{ ansible_facts['lsb']['codename'] }} {{ ansible_facts['lsb']['codename'] }} main
+- name: Add bcc-tools libbcc-examples linux-headers
+  apt:
+    name:
+      - bcc-tools
+      - libbcc-examples
+      - linux-headers-{{ ansible_kernel }}
+    update_cache: yes
+#- name: Create a file of a system-wide environment variable
+#  file:
+#    path: /etc/profile.d/bcc.sh
+#    state: touch
+#- name: Add /usr/share/bcc/tools to PATH
+#  lineinfile:
+#    #path: /home/vagrant/.profile
+#    path: /etc/profile.d/bcc.sh
+#    line: 'export PATH=$PATH:/usr/share/bcc/tools'
+#    insertafter: EOF
+- name: Add /usr/share/bcc/tools to PATH
+  lineinfile:
+    path: /home/vagrant/.profile
+    line: 'export PATH=$PATH:/usr/share/bcc/tools'
+    insertafter: EOF
+- name: Keep environmental variables
+  lineinfile:
+    path: /etc/sudoers
+    regexp: '^Defaults\s+env_keep += \"PATH\"'
+    insertafter: '^Defaults\tenv_reset'
+    line: "Defaults\tenv_keep +=\"PATH\""
+- name: Comment out secure_path
+  lineinfile:
+    path: /etc/sudoers
+    state: "present"
+    backrefs: "yes"
+    regexp: '^(Defaults\tsecure_path=.*)$'
+    line: '#\1'

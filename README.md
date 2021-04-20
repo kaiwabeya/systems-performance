@@ -17,12 +17,12 @@ This repository includes files to create a VM with which a user can try system a
 
 ### Create a VM
 
-"""bash
+```bash
 vagrant up
-"""
+```
 
 ### Login
 
-"""bash
+```bash
 vagrant ssh
-"""
+```

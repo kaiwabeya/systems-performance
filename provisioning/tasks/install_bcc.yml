@@ -13,16 +13,6 @@
       - libbcc-examples
       - linux-headers-{{ ansible_kernel }}
     update_cache: yes
-#- name: Create a file of a system-wide environment variable
-#  file:
-#    path: /etc/profile.d/bcc.sh
-#    state: touch
-#- name: Add /usr/share/bcc/tools to PATH
-#  lineinfile:
-#    #path: /home/vagrant/.profile
-#    path: /etc/profile.d/bcc.sh
-#    line: 'export PATH=$PATH:/usr/share/bcc/tools'
-#    insertafter: EOF
 - name: Add /usr/share/bcc/tools to PATH
   lineinfile:
     path: /home/vagrant/.profile

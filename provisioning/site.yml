@@ -5,7 +5,7 @@
   tasks:
     - name: Install perf
       apt:
-        pkg: 
+        name: 
           - linux-tools-generic
           - linux-tools-{{ ansible_kernel }}
         state: present
@@ -13,3 +13,6 @@
     - import_tasks: ./tasks/install_bcc.yml
       tags:
         - install_bcc
+    - import_tasks: ./tasks/install_bpf.yml
+      tags:
+        - install_bpf

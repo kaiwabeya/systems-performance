@@ -1,6 +1,6 @@
 # VM for practicing Systems Performance
 
-This repository includes files to create a VM with which a user can try system analytics tools that are written in System Performance (Brendan Gregg 20).
+This repository includes files to create a VM with which a user can try system analytics tools introduced in System Performance (Brendan Gregg 20).
 
 ## Overview of the VM
 

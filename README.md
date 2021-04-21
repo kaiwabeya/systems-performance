@@ -6,7 +6,7 @@ This repository includes files to create a VM with which a user can try system a
 
 ### System
 
-* Ubuntu 18.04
+* Ubuntu 20.04
 * 2 CPUs
 * 4GB Memory
 * No GUI
@@ -14,7 +14,18 @@ This repository includes files to create a VM with which a user can try system a
 ### Tools included in the VM
 
 * perf
-* BCC tools
+* bpftrace
+* BPF tools
+
+Note that BPF tools such as `profile`, `execsnoop` and `offcputime` are installed by bpfcc-tools.
+Names of the tools installed by bpfcc-tools have postfix (`-bpfcc`).
+See `/sbin` that is a directory where the installed tools are. 
+
+### Softwares that consume system resources
+
+Following softwares is running on a created VM as sample systems that consume system resource.
+
+* Kubernetes
 
 ## Usage
 

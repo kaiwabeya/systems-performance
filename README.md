@@ -17,13 +17,14 @@ This repository includes files to create a VM with which a user can try system a
 * bpftrace
 * BPF tools
 
-Note that BPF tools such as `profile`, `execsnoop` and `offcputime` are installed by bpfcc-tools.
+Note that BPF tools such as `profile` and `execsnoop` will be installed by bpfcc-tools.
 Names of the tools installed by bpfcc-tools have postfix (`-bpfcc`).
-See `/sbin` that is a directory where the installed tools are. 
+For example, the command of `profile` is `profile-bpfcc`.
+If you want to check a list of BPF tools, see `ls /sbin/*-bpfcc` in the created VM.
 
 ### Softwares that consume system resources
 
-Following softwares is running on a created VM as sample systems that consume system resource.
+Following software is running as sample systems that consume system resource.
 
 * Kubernetes
 

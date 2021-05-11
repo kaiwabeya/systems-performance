@@ -3,4 +3,7 @@
   apt:
     name:
       - sysstat
+      - atop
+      - hwloc
+      - valgrind
     update_cache: yes

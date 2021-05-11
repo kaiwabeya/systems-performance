@@ -16,6 +16,7 @@ This repository includes files to create a VM with which a user can try system a
 * perf
 * bpftrace
 * BPF tools
+* sysstat (mpstat, iostat, sar, etc.)
 
 Note that BPF tools such as `profile` and `execsnoop` will be installed by bpfcc-tools.
 Names of the tools installed by bpfcc-tools have postfix (`-bpfcc`).

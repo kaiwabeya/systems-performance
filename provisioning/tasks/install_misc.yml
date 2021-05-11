@@ -1,0 +1,6 @@
+---
+- name: Add sysstat
+  apt:
+    name:
+      - sysstat
+    update_cache: yes

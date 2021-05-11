@@ -16,6 +16,9 @@
     - import_tasks: ./tasks/install_bpf.yml
       tags:
         - install_bpf
+    - import_tasks: ./tasks/install_misc.yml
+      tags:
+        - install_tools
     - import_tasks: ./tasks/install_minikube.yml
       tags:
         - install_minikube

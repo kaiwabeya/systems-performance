@@ -31,6 +31,8 @@ If you want to check a list of BPF tools, see `ls /sbin/*-bpfcc` in the created 
 Following software is running as sample systems that consume system resource.
 
 * Kubernetes
+* Istio
+* [Bookinfo sample application](https://istio.io/latest/docs/examples/bookinfo/)
 
 ## Usage
 

@@ -36,9 +36,11 @@ Following software is running as sample systems that consume system resource.
 
 ### Prerequisites
 
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (>=6.1)
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (6.1.18)
 * [Vagrant](https://www.vagrantup.com/downloads) (>=2.2)
 * [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) (>=2.10)
+
+Note that the latest VirtualBox may not have compatibility to the latest Vagrant.
 
 ### Create a VM
 

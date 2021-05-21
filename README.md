@@ -66,7 +66,7 @@ vagrant ssh
 # Run sample applications
 ./launch.sh
 
-# Push workload
+# Put workload
 while true; do curl -sS http://$GATEWAY_URL/productpage > /dev/null ; sleep 0.1; done
 
 # Open other terminal and try system performance tools

@@ -1,0 +1,8 @@
+---
+- name: Install perf
+  apt:
+    name: 
+      - linux-tools-generic
+      - linux-tools-{{ ansible_kernel }}
+    state: present
+    update_cache: yes

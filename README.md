@@ -43,6 +43,8 @@ Following software is running as sample systems that consume system resource.
 ### Create a VM
 
 ```bash
+ansible-galaxy install geerlingguy.docker -p provisioning/roles
+ansible-galaxy install geerlingguy.kubernetes -p provisioning/roles
 vagrant up
 ```
 
@@ -57,17 +59,18 @@ vagrant ssh
 ```bash
 # Login
 vagrant ssh
+
 # Run sample applications
-curl -L https://istio.io/downloadIstio | sh -
-cd istio-1.9.4
-export PATH=$PWD/bin:$PATH
-istioctl install --set profile=demo -y
-kubectl label namespace default istio-injection=enabled
-kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
-kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
-export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
-export INGRESS_HOST=$(minikube ip)
-export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
-while true; do curl -sS http://$GATEWAY_URL/productpage > /dev/null ; sleep 3; done
+./launch.sh
+
+# Push workload
+while true; do curl -sS http://$GATEWAY_URL/productpage > /dev/null ; sleep 0.1; done
+
 # Open other terminal and try system performance tools
+```
+
+### Tear down
+
+```bash
+vagrant destroy -f
 ```

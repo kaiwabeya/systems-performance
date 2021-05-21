@@ -1,0 +1,21 @@
+---
+- name: Create a directory of kube config
+  file:
+    path: /home/vagrant/.kube
+    state: directory
+    mode: '0755'
+- name: Copy admin.conf
+  copy:
+    remote_src: yes
+    src: /etc/kubernetes/admin.conf
+    dest: /home/vagrant/.kube/config
+    owner: vagrant
+    group: vagrant
+    mode: '0644'
+- name: Copy launch script
+  copy:
+    src: launch.sh
+    dest: /home/vagrant/launch.sh
+    owner: vagrant
+    group: vagrant
+    mode: '0755'

@@ -2,23 +2,24 @@
 - hosts: vagrants
   become: true
   user: vagrant
+  vars:
+    kubernetes_allow_pods_on_master: true
+  roles:
+    - geerlingguy.docker
+    - geerlingguy.kubernetes
   tasks:
-    - name: Install perf
-      apt:
-        name: 
-          - linux-tools-generic
-          - linux-tools-{{ ansible_kernel }}
-        state: present
-        update_cache: yes
+    - import_tasks: ./tasks/setup_kubectl.yml
+      tags:
+        - setup
+    - import_tasks: ./tasks/install_perf.yml
+      tags:
+        - install
     - import_tasks: ./tasks/install_bcc.yml
       tags:
-        - install_bcc
+        - install
     - import_tasks: ./tasks/install_bpf.yml
       tags:
-        - install_bpf
+        - install
     - import_tasks: ./tasks/install_misc.yml
       tags:
-        - install_tools
-    - import_tasks: ./tasks/install_minikube.yml
-      tags:
-        - install_minikube
+        - install

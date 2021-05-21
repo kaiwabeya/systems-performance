@@ -1,2 +1,4 @@
 *.log
 .vagrant/
+provisioning/roles/geerlingguy.docker
+provisioning/roles/geerlingguy.kubernetes

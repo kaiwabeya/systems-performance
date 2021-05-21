@@ -28,11 +28,10 @@ If you want to check a list of BPF tools, see `ls /sbin/*-bpfcc` in the created 
 
 ### Softwares that consume system resources
 
-Following software is running as sample systems that consume system resource.
+Kubernetes single cluster is running in the created VM as sample systems that consume system resource.
 
-* Kubernetes
-* Istio
-* [Bookinfo sample application](https://istio.io/latest/docs/examples/bookinfo/)
+In addition, sample applications (Istio and [Bookinfo sample application](https://istio.io/latest/docs/examples/bookinfo/)) can start by `launch.sh` that is included in the VM.
+By requesting repeatedly, you can put workload so that you can enjoy system performance tools.
 
 ## Usage
 

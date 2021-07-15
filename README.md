@@ -1,10 +1,32 @@
 # VM for practicing Systems Performance
 
-This repository includes files to create a VM with which a user can try system analytics tools introduced in System Performance (Brendan Gregg 20).
+This repository includes files to set up system monitoring tools that are introduced in System Performance (Brendan Gregg 20).
 
-## Overview of the VM
+The two options are available.
 
-### System
+* [On premise]: System monitoring tools will be installed to your machine
+* [VM]: A new VM that has system monitoring tools will be created
+
+## On premise
+
+### Prerequisite
+
+* Ubuntu 20.04
+* Python3
+* Ansible
+
+### Setup
+
+```bash
+cd provisioning
+ansible-galaxy install geerlingguy.docker -p provisioning/roles
+ansible-galaxy install geerlingguy.kubernetes -p provisioning/roles
+ansible-playboot -i hosts site.yml
+```
+
+## VM
+
+### Overview of created VM
 
 * Ubuntu 20.04
 * 2 CPUs

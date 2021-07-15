@@ -1,16 +1,7 @@
 ---
-- hosts: vagrants
+- hosts: all
   become: true
-  user: vagrant
-  vars:
-    kubernetes_allow_pods_on_master: true
-  roles:
-    - geerlingguy.docker
-    - geerlingguy.kubernetes
   tasks:
-    - import_tasks: ./tasks/setup_kubectl.yml
-      tags:
-        - setup
     - import_tasks: ./tasks/install_perf.yml
       tags:
         - install
@@ -23,3 +14,14 @@
     - import_tasks: ./tasks/install_misc.yml
       tags:
         - install
+- hosts: vagrants
+  become: true
+  vars:
+    kubernetes_allow_pods_on_master: true
+  roles:
+    - geerlingguy.docker
+    - geerlingguy.kubernetes
+  tasks:
+    - import_tasks: ./tasks/setup_kubectl.yml
+      tags:
+        - setup

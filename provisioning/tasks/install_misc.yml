@@ -6,4 +6,5 @@
       - atop
       - hwloc
       - valgrind
+      - numactl
     update_cache: yes

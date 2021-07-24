@@ -37,7 +37,7 @@ By requesting repeatedly, you can put workload so that you can enjoy system perf
 
 ### Prerequisites
 
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (6.1.18)
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (6.1.24)
 * [Vagrant](https://www.vagrantup.com/downloads) (>=2.2)
 * [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) (>=2.10)
 

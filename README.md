@@ -1,4 +1,4 @@
-# VM for practicing Systems Performance
+# Install Systems Performance tools
 
 This repository includes files to set up system monitoring tools that are introduced in System Performance (Brendan Gregg 20).
 

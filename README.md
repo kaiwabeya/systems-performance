@@ -1,17 +1,13 @@
 # VM for practicing Systems Performance
 
-This repository includes files to create a VM with which a user can try system analytics tools introduced in System Performance (Brendan Gregg 20).
+This repository includes files to set up system monitoring tools that are introduced in System Performance (Brendan Gregg 20).
 
-## Overview of the VM
+The two options are available.
 
-### System
+* [On premise]: System monitoring tools will be installed to your machine
+* [VM]: A new VM that has system monitoring tools will be created
 
-* Ubuntu 20.04
-* 2 CPUs
-* 4GB Memory
-* No GUI
-
-### Tools included in the VM
+## Tools to be installed
 
 * perf
 * bpftrace
@@ -26,14 +22,35 @@ Names of the tools installed by bpfcc-tools have postfix (`-bpfcc`).
 For example, the command of `profile` is `profile-bpfcc`.
 If you want to check a list of BPF tools, see `ls /sbin/*-bpfcc` in the created VM.
 
+## On premise
+
+### Prerequisite
+
+* Ubuntu 20.04
+* Python3
+* Ansible
+
+### Setup
+
+```bash
+sudo ansible-playbook -i localhost, -c local provisioning/site.yml
+```
+
+## VM
+
+### Overview of created VM
+
+* Ubuntu 20.04
+* 2 CPUs
+* 4GB Memory
+* No GUI
+
 ### Softwares that consume system resources
 
 A Kubernetes single cluster is running in the created VM as a sample system that consumes system resource.
 
 In addition, sample applications (Istio and [Bookinfo sample application](https://istio.io/latest/docs/examples/bookinfo/)) can start by `launch.sh` that is included in the VM.
 By requesting repeatedly, you can put workload so that you can enjoy system performance tools.
-
-## Usage
 
 ### Prerequisites
 

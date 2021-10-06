@@ -16,6 +16,7 @@ The two options are available.
 * atop
 * hwloc
 * valgrind
+* iotop
 
 Note that BPF tools such as `profile` and `execsnoop` will be installed by bpfcc-tools.
 Names of the tools installed by bpfcc-tools have postfix (`-bpfcc`).

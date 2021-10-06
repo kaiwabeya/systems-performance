@@ -7,4 +7,5 @@
       - hwloc
       - valgrind
       - numactl
+      - iotop
     update_cache: yes

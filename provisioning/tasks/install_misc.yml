@@ -1,5 +1,5 @@
 ---
-- name: Add sysstat
+- name: Add miscellaneous tools
   apt:
     name:
       - sysstat
